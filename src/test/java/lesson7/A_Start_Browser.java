@@ -14,8 +14,9 @@ public class A_Start_Browser {
         //chromeOptions.addArguments("start-maximized");
         chromeOptions.addArguments("--window-size=1300,1080");
         chromeOptions.addArguments("--incognito");
-        By priceLocator = By.cssSelector(".a-offscreen");
+        By priceLocator = By.cssSelector(".a-price span[aria-hidden='true']");
         By burgerMenuLocator = By.id("nav-hamburger-menu");
+        //By burgerMenuLocator = By.xpath("//*[@id='nav-hamburger-menu']");
         By computerOptionLocator = By.cssSelector("a[data-menu-id='6']");
         By dataStorageOptionLocator = By.xpath("//a[text()='Data Storage']");
         //By price = By.xpath("//*[@class='a-price-whole']");
@@ -35,7 +36,7 @@ public class A_Start_Browser {
 
         Thread.sleep(10000);
         WebElement price = driver.findElement(priceLocator);
-        String text = price.getText();
+        String text = price.getText().replace("\n", ".");
         System.out.printf("The price is: '%s'%n", text);
 
         //System.out.println(driver.findElement(priceLocator).getText());
