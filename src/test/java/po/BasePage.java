@@ -1,5 +1,8 @@
 package test.java.po;
 
+import com.google.inject.internal.ErrorsException;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,6 +18,7 @@ public abstract class BasePage {
     private final By flagLocator = By.id("icp-nav-flyout");
     private final By inputLocator = By.id("twotabsearchtextbox");
     private final By searchBtnLocator = By.id("nav-search-submit-button");
+    private final Logger logger = LogManager.getLogger(BasePage.class);
 
     protected BasePage(WebDriver driver) {
         this.driver = driver;
@@ -24,6 +28,7 @@ public abstract class BasePage {
     abstract BasePage open();
 
     public BasePage selectLanguage(String language) {
+        logger.info(String.format("Select language '%s'", language));
         By langOptionLocator = By.xpath(String.format("//span[text()='%s']", language));
         Actions action = new Actions(driver);
         action
@@ -43,6 +48,8 @@ public abstract class BasePage {
     }
 
     public BasePage setSearch(String search) {
+        logger.info(String.format("Set search '%s'", search));
+        //if(search.equals("iPhone")) throw new Error("Some error !!!");
         WebElement input = driver.findElement(inputLocator);
         input.clear();
         input.sendKeys(search);
@@ -51,6 +58,7 @@ public abstract class BasePage {
     }
 
     public BasePage clickSearch() {
+        logger.info("Click search button");
         driver.findElement(searchBtnLocator).click();
         return this;
     }

@@ -1,5 +1,7 @@
 package test.java.po;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -8,9 +10,11 @@ public class TodaysDeals extends BasePage{
 
     private final By checkboxDevicesLocator = By.xpath("//input[@type='checkbox' and following-sibling::span[contains(text(),'Devices')]]");
     private final By logoLocator = By.id("nav-logo-sprites");
+    Logger logger = LogManager.getLogger(TodaysDeals.class);
 
     public TodaysDeals(WebDriver driver) {
         super(driver);
+        logger.debug("Initialized Todays Deal page");
     }
 
     @Override
@@ -20,11 +24,13 @@ public class TodaysDeals extends BasePage{
     }
 
     public TodaysDeals clickCheckbox() {
+        logger.info("Click checkbox");
         wait.until(ExpectedConditions.elementToBeClickable(checkboxDevicesLocator)).click();
         return this;
     }
 
     public TodaysDeals clickLogo() {
+        logger.info("Click Logo");
         wait.until(ExpectedConditions.elementToBeClickable(logoLocator)).click();
         return this;
     }
