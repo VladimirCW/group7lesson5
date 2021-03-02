@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import test.java.TestBaseSetup;
+import test.java.helpers.RetryAnalyzer;
 import test.java.po.HomePage;
 import test.java.po.SearchResult;
 import test.java.po.TodaysDeals;
@@ -33,7 +34,8 @@ public class B_IphonePriceFromTo extends TestBaseSetup {
         homePage
                 .open()
                 .clickTodaysDeal();
-        todaysDeals
+        assertTrue(false);
+        /*todaysDeals
                 .clickCheckbox()
                 .clickLogo();
         homePage
@@ -55,6 +57,6 @@ public class B_IphonePriceFromTo extends TestBaseSetup {
         float actualPrice = Float.parseFloat(actualPriceAsString);
         assertTrue(
                 actualPrice > 10.00 && actualPrice < 11.00,
-                String.format("Expected actual price '%s' to be more than 10 and less than 11", actualPrice));
+                String.format("Expected actual price '%s' to be more than 10 and less than 11", actualPrice));*/
     }
 }
