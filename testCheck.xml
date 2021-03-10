@@ -4,6 +4,7 @@
         <listener class-name="test.java.helpers.TestListener"/>
         <!--<listener class-name="test.java.helpers.AnnotationTransformer"/>-->
     </listeners>
+    <parameter name="browser" value="firefox"/>
     <test name="BBBB">
         <classes>
             <class name="test.java.lesson9.B_IphonePriceFromTo"/>

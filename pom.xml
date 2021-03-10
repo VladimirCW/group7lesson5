@@ -13,6 +13,7 @@
         <maven.compiler.target>11</maven.compiler.target>
         <suiteXmlFile>lesson6.xml</suiteXmlFile>
         <aspectj.version>1.8.10</aspectj.version>
+        <browser>chrome</browser>
     </properties>
 
     <build>
@@ -67,6 +68,9 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
                     </suiteXmlFiles>
+                    <systemPropertyVariables>
+                        <browser>${browser}</browser>
+                    </systemPropertyVariables>
                 </configuration>
                 <dependencies>
                     <dependency>
