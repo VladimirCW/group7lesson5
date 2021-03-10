@@ -14,6 +14,8 @@
         <suiteXmlFile>lesson6.xml</suiteXmlFile>
         <aspectj.version>1.8.10</aspectj.version>
         <browser>chrome</browser>
+        <threadCount>1</threadCount>
+        <dp>empty</dp>
     </properties>
 
     <build>
@@ -70,7 +72,9 @@
                     </suiteXmlFiles>
                     <systemPropertyVariables>
                         <browser>${browser}</browser>
+                        <dp>${dp}</dp>
                     </systemPropertyVariables>
+                    <threadCount>${threadCount}</threadCount>
                 </configuration>
                 <dependencies>
                     <dependency>

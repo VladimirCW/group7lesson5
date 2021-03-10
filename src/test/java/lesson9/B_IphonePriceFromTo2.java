@@ -25,7 +25,9 @@ public class B_IphonePriceFromTo2 extends TestBaseSetup {
     }
 
     @Test
-    public void test1() {
+    public void test1(String dpValue) throws InterruptedException {
+        System.out.println("DP value is: " + dpValue);
+        Thread.sleep(15000);
         homePage
                 .open()
                 .clickTodaysDeal();
