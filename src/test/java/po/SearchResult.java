@@ -58,7 +58,7 @@ public class SearchResult extends BasePage {
         MyCondition condition = new MyCondition();
         wait.until(condition);*/
         wait.until(driver -> driver.findElements(searchResultLocator).size() >= 3);
-        wait.until(driver -> driver.findElement(searchResultLocator).findElement(priceLocator).getText().contains("$"));
+        //wait.until(driver -> driver.findElement(searchResultLocator).findElement(priceLocator).getText().contains("$"));
         logger.debug("Button 'Go' was clicked, elements loaded");
         return this;
     }
@@ -66,7 +66,7 @@ public class SearchResult extends BasePage {
     public String getFirstResultPrice() {
         logger.info("Get First result price");
         return driver
-                .findElement(searchResultLocator)
+                .findElements(searchResultLocator).get(2)
                 .findElement(priceLocator)
                 .getText();
     }

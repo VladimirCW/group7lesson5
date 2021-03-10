@@ -24,12 +24,12 @@ public class TestBaseSetup {
         chromeOptions.addArguments("--window-size=1300,1080");
 
 
-        //driver = new ChromeDriver(chromeOptions);
-        try {
-            driver = new RemoteWebDriver(new URL("http://ec2-3-133-59-40.us-east-2.compute.amazonaws.com:4444/wd/hub"), chromeOptions);
+        driver = new ChromeDriver(chromeOptions);
+        /*try {
+            driver = new RemoteWebDriver(new URL("http://127.0.0.1:4444/wd/hub"), chromeOptions);
         } catch (MalformedURLException e) {
             e.printStackTrace();
-        }
+        }*/
         iTestContext.setAttribute("driver", driver);
     }
 

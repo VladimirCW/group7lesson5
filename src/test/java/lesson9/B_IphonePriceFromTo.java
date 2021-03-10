@@ -34,8 +34,7 @@ public class B_IphonePriceFromTo extends TestBaseSetup {
         homePage
                 .open()
                 .clickTodaysDeal();
-        assertTrue(false);
-        /*todaysDeals
+        todaysDeals
                 .clickCheckbox()
                 .clickLogo();
         homePage
@@ -50,13 +49,12 @@ public class B_IphonePriceFromTo extends TestBaseSetup {
                 .setMaxPrice("11")
                 .clickGo();
 
-
         String actualPriceAsString = searchResult.getFirstResultPrice()
                 .replace("\n", ".")
                 .replace("$", "");
         float actualPrice = Float.parseFloat(actualPriceAsString);
         assertTrue(
                 actualPrice > 10.00 && actualPrice < 11.00,
-                String.format("Expected actual price '%s' to be more than 10 and less than 11", actualPrice));*/
+                String.format("Expected actual price '%s' to be more than 10 and less than 11", actualPrice));
     }
 }
