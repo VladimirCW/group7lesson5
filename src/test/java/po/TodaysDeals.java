@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class TodaysDeals extends BasePage{
 
-    private final By checkboxDevicesLocator = By.xpath("//input[@type='checkbox' and following-sibling::span[contains(text(),'Devices')]]");
+    private final By checkboxDevicesLocator = By.xpath("//input[@type='checkbox' and following-sibling::span[contains(text(),'Baby')]]");
     private final By logoLocator = By.id("nav-logo-sprites");
     Logger logger = LogManager.getLogger(TodaysDeals.class);
 

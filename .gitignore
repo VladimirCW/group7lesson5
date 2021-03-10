@@ -4,3 +4,6 @@ target/
 chromedriver
 screenshots/
 logs/
+.allure/
+allure-report/
+allure-results/
