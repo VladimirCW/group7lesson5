@@ -1,5 +1,6 @@
 package test.java.po;
 
+import io.qameta.allure.Step;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -23,12 +24,14 @@ public class TodaysDeals extends BasePage{
         return this;
     }
 
+    @Step("Click checkbox button")
     public TodaysDeals clickCheckbox() {
         logger.info("Click checkbox");
         wait.until(ExpectedConditions.elementToBeClickable(checkboxDevicesLocator)).click();
         return this;
     }
 
+    @Step("Click logo")
     public TodaysDeals clickLogo() {
         logger.info("Click Logo");
         wait.until(ExpectedConditions.elementToBeClickable(logoLocator)).click();

@@ -1,5 +1,6 @@
 package test.java.lesson9;
 
+import io.qameta.allure.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -15,6 +16,14 @@ import test.java.po.TodaysDeals;
 
 import static org.testng.Assert.assertTrue;
 
+@Epics({
+        @Epic("Cart"),
+        @Epic("Login")
+})
+@Features({
+        @Feature("Add to cart"),
+        @Feature("Login with USA user")
+})
 public class B_IphonePriceFromTo extends TestBaseSetup {
     HomePage homePage;
     TodaysDeals todaysDeals;
@@ -29,6 +38,15 @@ public class B_IphonePriceFromTo extends TestBaseSetup {
 //        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
     }
 
+    @Flaky
+    @Owner("Vova")
+    @Description("sddadasdadsdasdasdasd\nfdsfsdfsdfsdfsdfdsf\nasdsadsadasdasdasd")
+    @Link("https://example.org")
+    @Link(name = "allure", type = "mylink")
+    @TmsLink("http://tms.com/AAA-123")
+    @Issue("http://jira.com/III-123")
+    @Severity(SeverityLevel.BLOCKER)
+    @Story("Add phone to the cart")
     @Test
     public void test1() {
         homePage

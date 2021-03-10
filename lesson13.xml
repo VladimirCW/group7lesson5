@@ -7,8 +7,8 @@
     <test name="BBBB">
         <classes>
             <class name="test.java.lesson9.B_IphonePriceFromTo"/>
-            <!--<class name="test.java.lesson9.B_IphonePriceFromTo2"/>
-            <class name="test.java.lesson9.B_IphonePriceFromTo3"/>-->
+            <class name="test.java.lesson9.B_IphonePriceFromTo2"/>
+            <class name="test.java.lesson9.B_IphonePriceFromTo3"/>
         </classes>
     </test>
 </suite>

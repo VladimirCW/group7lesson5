@@ -1,6 +1,7 @@
 package test.java.po;
 
 import com.google.inject.internal.ErrorsException;
+import io.qameta.allure.Step;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -27,6 +28,7 @@ public abstract class BasePage {
 
     abstract BasePage open();
 
+    @Step("Select language to: {language}")
     public BasePage selectLanguage(String language) {
         logger.info(String.format("Select language '%s'", language));
         By langOptionLocator = By.xpath(String.format("//span[text()='%s']", language));
@@ -47,6 +49,7 @@ public abstract class BasePage {
         return this;
     }
 
+    @Step("Set search to: {search}")
     public BasePage setSearch(String search) {
         logger.info(String.format("Set search '%s'", search));
         //if(search.equals("iPhone")) throw new Error("Some error !!!");
@@ -57,6 +60,7 @@ public abstract class BasePage {
         return this;
     }
 
+    @Step("Click search")
     public BasePage clickSearch() {
         logger.info("Click search button");
         driver.findElement(searchBtnLocator).click();

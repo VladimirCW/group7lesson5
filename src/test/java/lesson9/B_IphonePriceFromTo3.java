@@ -1,5 +1,6 @@
 package test.java.lesson9;
 
+import io.qameta.allure.*;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import test.java.TestBaseSetup;
@@ -9,6 +10,8 @@ import test.java.po.TodaysDeals;
 
 import static org.testng.Assert.assertTrue;
 
+@Epic("Payment")
+@Feature("MasterCard")
 public class B_IphonePriceFromTo3 extends TestBaseSetup {
     HomePage homePage;
     TodaysDeals todaysDeals;
@@ -23,6 +26,8 @@ public class B_IphonePriceFromTo3 extends TestBaseSetup {
 //        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
     }
 
+    @Severity(SeverityLevel.MINOR)
+    @Story("Negative - zero balance")
     @Test
     public void test1() {
         homePage

@@ -1,5 +1,6 @@
 package test.java.po;
 
+import io.qameta.allure.Step;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -26,6 +27,7 @@ public class SearchResult extends BasePage {
         return this;
     }
 
+    @Step("Set min price to: {price}")
     public SearchResult setMinPrice(String price) {
         logger.info(String.format("Set Min Price '%s'", price));
         wait.until(ExpectedConditions.elementToBeClickable(minInputLocator));
@@ -33,6 +35,7 @@ public class SearchResult extends BasePage {
         return this;
     }
 
+    @Step("Set max price to: {price}")
     public SearchResult setMaxPrice(String price) {
         logger.info(String.format("Set Max price '%s'", price));
         wait.until(ExpectedConditions.elementToBeClickable(maxInputLocator));
@@ -40,6 +43,7 @@ public class SearchResult extends BasePage {
         return this;
     }
 
+    @Step("Click Go button")
     public SearchResult clickGo() {
         logger.info("Click 'Go' button");
         wait.until(ExpectedConditions.elementToBeClickable(goBtnLocator));
@@ -63,6 +67,7 @@ public class SearchResult extends BasePage {
         return this;
     }
 
+    @Step("Get result price")
     public String getFirstResultPrice() {
         logger.info("Get First result price");
         return driver
