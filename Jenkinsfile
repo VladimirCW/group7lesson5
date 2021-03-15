@@ -8,9 +8,16 @@ pipeline {
             }
         }
 
-        stage('Hello') {
+        stage('Lint') {
             steps {
-                echo 'Hello dsad'
+                echo 'Lint check'
+            }
+        }
+
+        stage('Unit tests') {
+            steps {
+                //bat 'mvn clean -DsuiteXmlFile=unit-test.xml test'
+                sh 'mvn clean -DsuiteXmlFile=unit-test.xml test'
             }
         }
     }
