@@ -3,11 +3,15 @@ pipeline {
 
     stages {
         stage('Preparation') {
-            git 'https://github.com/VladimirCW/group7lesson5.git'
+            steps {
+                git 'https://github.com/VladimirCW/group7lesson5.git'
+            }
         }
 
         stage('Hello') {
-            echo 'Hello'
+            steps {
+                echo 'Hello'
+            }
         }
     }
 }
