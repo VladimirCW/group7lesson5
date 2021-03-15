@@ -2,6 +2,7 @@ package test.java.lesson9;
 
 import io.qameta.allure.*;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import test.java.TestBaseSetup;
 import test.java.helpers.RetryAnalyzer;
@@ -23,8 +24,6 @@ public class B_IphonePriceFromTo2 extends TestBaseSetup {
         homePage = new HomePage(driver);
         todaysDeals = new TodaysDeals(driver);
         searchResult = new SearchResult(driver);
-//        driver.manage().timeouts().implicitlyWait(5, TimeUnit.MILLISECONDS);
-//        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
     }
 
     @TmsLinks({
@@ -35,10 +34,11 @@ public class B_IphonePriceFromTo2 extends TestBaseSetup {
     @Severity(SeverityLevel.NORMAL)
     @Story("Remove single product")
     @Test
-    public void test1() {
+    public void parametrizedMethod(String param) {
+        System.out.println("================================== Param: " + param);
         homePage
                 .open()
                 .clickTodaysDeal();
-        assertTrue(false);
+        assertTrue(true);
     }
 }
