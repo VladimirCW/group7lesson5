@@ -22,13 +22,13 @@ pipeline {
         }
 
         stage('Deploy') {
-            step {
+            steps {
                 echo 'Deploy'
             }
         }
 
         stage('UI tests') {
-            step {
+            steps {
             // bat ''
                 sh 'mvn clean -DsuiteXmlFile=parametrized.xml -Ddp=smoke -DthreadCount=2 test'
             }
