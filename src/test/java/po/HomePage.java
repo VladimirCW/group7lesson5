@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import test.java.helpers.PropertyLoader;
 
 public class HomePage extends BasePage{
     private final By locationPopupCancelLocator = By.xpath("//input[@type='submit' and following-sibling::span[contains(text(),\"Don't Change\")]]");
@@ -23,7 +24,7 @@ public class HomePage extends BasePage{
         logger.warn("Warn error");
         logger.error("Error error");
         logger.fatal("Fatal error");
-        driver.get("https://www.amazon.com/");
+        driver.get(PropertyLoader.getProperty("url"));
         wait.until(ExpectedConditions.elementToBeClickable(locationPopupCancelLocator)).click();
         return this;
     }
