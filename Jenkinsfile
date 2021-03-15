@@ -20,5 +20,18 @@ pipeline {
                 sh 'mvn clean -DsuiteXmlFile=unit-test.xml test'
             }
         }
+
+        stage('Deploy') {
+            step {
+                echo 'Deploy'
+            }
+        }
+
+        stage('UI tests') {
+            step {
+            // bat ''
+                sh 'mvn clean -DsuiteXmlFile=parametrized.xml -Ddp=smoke -DthreadCount=2 test'
+            }
+        }
     }
 }
