@@ -34,8 +34,8 @@ pipeline {
 
         stage('UI tests') {
             steps {
-            // bat ''
-                sh 'mvn clean -DsuiteXmlFile=parametrized.xml -Ddp=smoke -Dbrowser=chrome -DthreadCount=2 test'
+            // bat 'mvn clean -DsuiteXmlFile=parametrized.xml -Ddp=smoke -Dbrowser=%browser% -DthreadCount=2 test'
+                sh 'mvn clean -DsuiteXmlFile=parametrized.xml -Ddp=smoke -Dbrowser=${browser} -DthreadCount=2 test'
             }
         }
     }

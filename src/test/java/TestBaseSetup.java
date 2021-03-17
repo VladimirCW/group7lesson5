@@ -30,6 +30,8 @@ public class TestBaseSetup {
 
 
         //driver = new ChromeDriver(chromeOptions);
+        System.out.println("888**********************" + System.getProperty("browser"));
+        System.out.println("888**********************" + System.getProperty("browser").equals("chrome"));
         try {
             driver = new RemoteWebDriver(
                     new URL("http://127.0.0.1:4444/wd/hub"),
