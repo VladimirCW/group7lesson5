@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    parameters {
+        choice(name: 'browser', choices: ['chrome', 'firefox'], description: 'Pick browser')
+        choice(name: 'threads', choices: ['1', '2', '3'], description: 'Pick threads amount')
+    }
+
     stages {
         stage('Preparation') {
             steps {
@@ -30,7 +35,7 @@ pipeline {
         stage('UI tests') {
             steps {
             // bat ''
-                sh 'mvn clean -DsuiteXmlFile=parametrized.xml -Ddp=smoke -DthreadCount=2 test'
+                sh 'mvn clean -DsuiteXmlFile=parametrized.xml -Ddp=smoke -Dbrowser=chrome -DthreadCount=2 test'
             }
         }
     }

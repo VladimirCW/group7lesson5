@@ -6,6 +6,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
@@ -25,11 +26,15 @@ public class TestBaseSetup {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--window-size=1300,1080");
+        FirefoxOptions ffOptions = new FirefoxOptions();
 
 
         //driver = new ChromeDriver(chromeOptions);
         try {
-            driver = new RemoteWebDriver(new URL("http://127.0.0.1:4444/wd/hub"), chromeOptions);
+            driver = new RemoteWebDriver(
+                    new URL("http://127.0.0.1:4444/wd/hub"),
+                    System.getProperty("browser").equals("chrome") ? chromeOptions : ffOptions
+            );
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
