@@ -33,18 +33,18 @@ pipeline {
                 sh 'mvn clean -DsuiteXmlFile=parametrized.xml -Ddp=smoke -DthreadCount=2 test'
             }
         }
+    }
 
-        stage('Report') {
-            steps {
-                script {
-                    allure([
-                        includeProperties: false,
-                        jdk: '',
-                        properties: [],
-                        reportBuildPolicy: 'ALWAYS',
-                        results: [[path: 'allure-results']]
-                    ])
-                }
+    post {
+        always {
+            script {
+                allure([
+                    includeProperties: false,
+                    jdk: '',
+                    properties: [],
+                    reportBuildPolicy: 'ALWAYS',
+                    results: [[path: 'allure-results']]
+                ])
             }
         }
     }
